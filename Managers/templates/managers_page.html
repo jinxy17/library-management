@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>管理员权限页面</title>
+  <style type="text/css">
+    .allManagerPage {
+      height: 100%;
+      width: 100%;
+      background-color: #dadad8;
+      border-color: #afb0b2;
+      border-style: solid;
+      border-width: thick;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+    .allManagerTable {
+       border: 1px solid black;
+       border-collapse:collapse;
+       text-align:center;
+       vertical-align:bottom;
+       width: 50%;
+       font-size: 20px;
+    }
+    .allManagerTable th:not(.ManagerIndex){
+      width: 40%;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .allManagerTable td:not(.ManagerIndex){
+      width: 40%;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .ManagerIndex {
+      width: 20%;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+  </style>
+  <script type="text/javascript" src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
+</head>
+<body>
+  <div class="allManagerPage">
+    <table style="height: 90%;" class="allManagerTable">
+      <tr> 
+        <th class="ManagerIndex"> 用户序号 </th>
+        <th> 用户账户 </th>
+        <th>         </th>
+      </tr>
+    </table>
+  </div>
+  <div style="height: 10%; top: 90%; position: fixed;">
+    <table>
+      <tr class="page-font">
+        <td width=""><button width="24px" height="25px" class="firstPage" onclick="page_click(this)">首页</button></td>
+        <td><button width="27px" height="22px" class="beforePage" onclick="page_click(this)">上一页</button></td>
+        <td>&nbsp;&nbsp;|&nbsp;第<input type="button" class="currentPage" value="1" readonly="readonly">页</td>
+        <td>&nbsp;&nbsp;&nbsp;共<input type="button" class="totalPage" value="1" readonly="readonly">页&nbsp;|&nbsp;&nbsp;</td>
+        <td width=""><button width="24px" height="25px" class="nextPage" onclick="page_click(this)">下一页</button></td>
+        <td><button width="27px" height="22px" class="lastPage" onclick="page_click(this)">末页</button></td>
+      </tr>
+    </table>
+  </div>
+  <script type="text/javascript">
+    var managers = {{ managers | safe }};
+    var managers_per_page = 10;
+    var totalPage = Math.ceil(managers.length / managers_per_page); //一共多少页
+    // console.log("totalPage", totalPage)
+    var currentPage = 1;//当前页码
+    //前端获取后台数据并呈现方法
+    function information_display(pageNumber) {
+      $(".allManagerTable").empty();
+      var end_managers = pageNumber * managers_per_page;
+      if(end_managers > managers.length){
+        end_managers = managers.length;
+      }
+      var managers_this_page = managers.slice((pageNumber - 1) * managers_per_page, end_managers)
+      // console.log(articles_this_page)
+      $.each(managers_this_page, function (index, n) {
+        var infor_title = "<tr><td class=\"ManagerIndex\">" + managers_this_page[index].id + "</td>" +
+                "<td>" + managers_this_page[index].account + "</td>" +
+                "<td><a href=\"/Managers/manager/delete/" +  managers_this_page[index].id + "/\">删除</a></td></tr>";
+        //console.log(infor_title)
+        $(".allManagerTable").append(infor_title);
+      })
+    }
+    window.onload = function () {
+      $(".totalPage").attr("value", totalPage);
+      information_display(1);
+    }
+    function page_click(item) {
+      // console.log(item)
+      //首页
+      if ($(item).attr("class") == "firstPage") {
+        // console.log("firstPage");
+        $(".currentPage").attr("value", 1)
+        information_display(1)
+      }
+      //上一页
+      else if ($(item).attr("class") == "beforePage") {
+        // console.log("beforePage")
+        pageNumber = parseInt($(".currentPage").attr("value"));
+        if (pageNumber > 1) {
+          $(".currentPage").attr("value", pageNumber - 1)
+          information_display(pageNumber - 1)
+        }
+        else {
+          $(".beforePage").attr("disabled", false)
+        }
+      }
+      //下一页
+      else if ($(item).attr("class") == "nextPage") {
+        // console.log("nextPage")
+        pageNumber = parseInt($(".currentPage").attr("value"));
+        if (pageNumber < totalPage) {
+          $(".currentPage").attr("value", pageNumber + 1)
+          information_display(pageNumber + 1)
+        }
+        else {
+          $(".nextPage").attr("disabled", false)
+        }
+      }
+      //尾页
+      else {
+        // console.log("lastPage")
+        $(".currentPage").attr("value", totalPage)
+        information_display(totalPage)
+      }
+    }
+  </script>
+</body>
+</html>

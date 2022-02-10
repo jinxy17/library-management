@@ -1,0 +1,212 @@
+[
+    {
+        "library": "yifu",
+        "floors": [
+            {
+                "floor": "1",
+                "rooms": []
+            },
+            {
+                "floor": "2",
+                "rooms": [
+                    {
+                        "room": "intloan",
+                        "chn": "馆际互借处",
+                        "x": 310,
+                        "y": 250, 
+                        "photos": ["intloan.jpg"],
+                        "overallView": ["intloan_overall.jpg"]
+                    },
+                    {
+                        "room": "fgnst",
+                        "chn": "外文科技图书借阅区",
+                        "x": 370,
+                        "y": 330, 
+                        "photos": ["fgnst.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "chnst",
+                        "chn": "中文科技图书借阅区",
+                        "x": 370,
+                        "y": 120, 
+                        "photos": ["chnst1.jpg", "chnst2.jpg"],
+                        "overallView": []
+                    }
+                ]
+            },
+            {
+                "floor": "3",
+                "rooms": [
+                    {
+                        "room": "mlib",
+                        "chn": "音乐图书馆",
+                        "x": 550,
+                        "y": 120, 
+                        "photos": ["mlib1.jpg", "mlib2.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "fgnpdc",
+                        "chn": "外文过刊阅览区",
+                        "x": 260,
+                        "y": 120, 
+                        "photos": ["fgnpdc.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "pdcnp",
+                        "chn": "现刊及报纸阅览室/区",
+                        "x": 260,
+                        "y": 340, 
+                        "photos": ["pdcnp.jpg"],
+                        "overallView": []
+                    }
+                ]
+            },
+            {
+                "floor": "4",
+                "rooms": [
+                    {
+                        "room": "chnpdc",
+                        "chn": "中文过刊阅览区",
+                        "x": 320,
+                        "y": 440, 
+                        "photos": ["chnpdc.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "croom",
+                        "chn": "培训教室",
+                        "x": 500,
+                        "y": 280, 
+                        "photos": ["croom.jpg"],
+                        "overallView": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "library": "bei",
+        "floors": [
+            {
+                "floor": "g",
+                "rooms": [
+                    {
+                        "room": "yjxuan",
+                        "chn": "邺架轩书店",
+                        "x": 570,
+                        "y": 450, 
+                        "photos": ["yjxuan.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "anc",
+                        "chn": "古籍阅览室",
+                        "x": 780,
+                        "y": 450, 
+                        "photos": ["anc.jpg"],
+                        "overallView": []
+                    }
+                ]
+            },
+            {
+                "floor": "1",
+                "rooms": [
+                    {
+                        "room": "ret",
+                        "chn": "自助还书",
+                        "x": 420,
+                        "y": 200, 
+                        "photos": ["ret.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "circdesk",
+                        "chn": "北馆（李文正馆）总服务台",
+                        "x": 490,
+                        "y": 360, 
+                        "photos": ["circdesk.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "thumem",
+                        "chn": "清华印记互动体验空间",
+                        "x": 340,
+                        "y": 510, 
+                        "photos": ["thumem.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "dscreg",
+                        "chn": "首次使用研读间/研讨间刷卡端",
+                        "x": 580,
+                        "y": 430, 
+                        "photos": ["dscreg.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "copier_irterm",
+                        "chn": "自助文印机、检索终端",
+                        "x": 600,
+                        "y": 200, 
+                        "photos": ["copier_irterm.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "feat",
+                        "chn": "专题图书区",
+                        "x": 780,
+                        "y": 470, 
+                        "photos": ["feat.jpg"],
+                        "overallView": []
+                    },
+                    {
+                        "room": "chkout",
+                        "chn": "自助借书机",
+                        "x": 720,
+                        "y": 280, 
+                        "photos": ["chkout.jpg"],
+                        "overallView": []
+                    }
+                ]
+            },
+            {
+                "floor": "2",
+                "rooms": [
+                    {
+                        "room": "grpdsc",
+                        "chn": "团体研讨间",
+                        "x": 430,
+                        "y": 440, 
+                        "photos": ["grpdsc.jpg"],
+                        "overallView": []
+                    }
+                ]
+            },
+            {
+                "floor": "3",
+                "rooms": [
+                    {
+                        "room": "idvdsc",
+                        "chn": "单人研读间",
+                        "x": 430,
+                        "y": 440, 
+                        "photos": ["idvdsc.jpg"],
+                        "overallView": []
+                    }
+                ]
+            },
+            {
+                "floor": "4",
+                "rooms": []
+            },
+            {
+                "floor": "5",
+                "rooms": []
+            }
+        ]
+    }
+]
+

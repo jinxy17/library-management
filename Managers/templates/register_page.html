@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>注册新用户</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <!-- Meta tag Keywords -->
+
+    <!-- css files -->
+    <link rel="stylesheet" href="/static/Manager/css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <link href="/static/Manager/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <style type="text/css">
+        .vertical-tab {
+            position: absolute;
+            top: 10%;
+            left: 30%;
+            width: 40%;
+            right: 30%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-bg" id="main">
+        <!-- title -->
+        <!-- //title -->
+        <div class="sub-main-w3">
+            <!-- vertical tabs -->
+            <div class="vertical-tab">
+                <div id="section2" class="section-w3ls">
+                    <input type="radio" name="sections" id="option2" checked>
+                        <form action="/Managers/manager/signup/" method="post">
+                            <h3 class="legend">注册帐户</h3>
+                            <div class="input">
+                                <span class="fa fa-user-o" aria-hidden="true"></span>
+                                <input type="text" placeholder="用户名" name="register_account" required />
+                            </div>
+                            <div class="input">
+                                <span class="fa fa-key" aria-hidden="true"></span>
+                                <input type="password" placeholder="密码" name="register_password" required />
+                            </div>
+                            <div class="input">
+                                <span class="fa fa-key" aria-hidden="true"></span>
+                                <input type="password"  placeholder="确认密码" name="confirmPassword" required />
+                            </div>
+                            <button type="submit" class="btn submit">注 册</button>
+                        </form>
+                    </article>
+                </div>
+            </div>
+            <!-- //vertical tabs -->
+            {% if warning %}
+            <script>
+                alert('{{ warning }}');
+            </script>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>

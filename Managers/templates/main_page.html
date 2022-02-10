@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>管理员主页</title>
+  <style type="text/css">
+      body{
+        height: 100%
+        background-color: rgb();
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 12%;
+        background-color: #7b8b6f;
+        height: 100%;
+        position: fixed;
+        overflow: auto;
+      }
+      li a {
+        display: block;
+        color: #fffaf4;
+        padding-top: 4px;
+        padding-bottom: 8px;
+        font-size: 20px;
+        text-decoration: none;
+        height: 50px;
+        text-align: center;
+      }
+      li a.active {
+        background-color: #965454;
+        color: white;
+      }
+      li a:hover:not(.active) {
+        background-color: rgb(100, 200, 300);
+        color: white;
+      }
+      .iframe_a {
+        position: absolute;
+        left: 13%;
+        height: 100%;
+        width: 87%;
+      }
+  </style>
+</head>
+<body>
+    <ul>
+        <li><a href="/Managers/article/all_article_page/" target="iframeContent">推送管理</a></li>
+        <li><a href="/Managers/appcomment/comments_page/" target="iframeContent">留言管理</a></li>
+        <li><a href="/Resources/" target="iframeContent">资源管理</a></li>
+        {% if is_supermanager == "1" %}
+        <li><a href="/Managers/manager/managers_page/" target="iframeContent">用户管理</a></li>
+        <li><a href="/Managers/manager/register_page/" target="iframeContent">增加用户</a></li>
+        {% endif %}
+        <li><a href="/Managers/article/add_article_page/" target="iframeContent">增加推送</a></li>
+        <li><a href="/Managers/manager/signout/">退出</a></li>
+    </ul>
+
+    <iframe src="{% url page_content %}" class="iframe_a", name="iframeContent"></iframe>
+</body>
+</html>
+
+

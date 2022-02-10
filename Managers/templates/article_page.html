@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文章详情</title>
+  <style type="text/css">
+      body {
+        background-color: #f0ebe5;
+      }
+      .functions {
+        background-color: #e0e5df;
+        border-style: double;
+        text-color: black;
+        text-decoration: none;
+        width: 10%;
+      }
+      .title {
+        text-align: center;
+        font-size: 30px;
+        margin: 10px;
+      }
+      .articleInfo{
+        text-align: center;
+        font-size: 15px;
+        margin: 10px;
+      }
+      .iframe_content {
+        border-style: inset;
+        height: 500px;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+      .comments {
+        border-style: inset;
+        background-color: white;
+      }
+      .CommentContent {
+        margin-top: 5%;
+        margin-bottom: 5%;
+
+      }
+      .CommentFunctions {
+        border-style: double;
+        text-color: black;
+        text-decoration: none;
+        width: 6%;
+      }
+  </style>
+</head>
+<body>
+    <a href="{% url 'all_articles_page' %}" class="functions">返回主页</a>
+    <a href="{% url 'delete_article' article_id=article.id %}" class="functions">删除文章</a>
+    <div>
+        <div class="title">{{ article.title }} </div>
+        <div class="articleInfo">作者: {% for author in article.authors.all %} {{ author }} {% endfor %} &nbsp&nbsp&nbsp&nbsp&nbsp
+        日期: {{ article.pub_date }}</div>
+    </div>
+    <iframe src="{{ article.url }}" class="iframe_content"></iframe>
+    <div class="comments">
+        {% for comment in comments %}
+        <div>
+            <div class="CommentInfo">用户: {{comment.user}}&nbsp&nbsp时间:&nbsp{{comment.pub_date}}&nbsp&nbsp被举报次数:{{comment.report}} </div>
+            <div class="CommentContent">内容：{{comment.content}}</div>
+            <div class="CommentFunctions"><a href="{% url 'delete_comment' comment_id=comment.id %}">删除评论</a></div>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+

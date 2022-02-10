@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>增加文章页面</title>
+  <!-- css files -->
+  <link rel="stylesheet" href="/static/Manager/css/style.css" type="text/css" media="all" />
+  <!-- Style-CSS -->
+  <link href="/static/Manager/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Font-Awesome-Icons-CSS -->
+  <style href="/static/Manager/css/style.css" type="text/css">
+      body {
+        background-repeat: no-repeat;
+        background-image: url(/static/Manager/images/Tsinghua1.jpeg);
+        background-size: cover;
+        height: 100%;
+      }
+      .addArticleForm {
+        background-color: white;
+        border-style: inset;
+        margin-left: 30%;
+        margin-top: 10%;
+        width: 40%;
+        height: 20%;
+      }
+      .addArticleForm input {
+
+      }
+      .input {
+        margin-bottom: 1em;
+        padding: 13px 15px;
+        border: 1px solid #eee;
+        background: #eee;
+        display: flex;
+        align-items: center;
+      }
+      .inputFile {
+        margin-bottom: 1em;
+        padding: 13px 15px;
+        border: 1px solid #eee;
+        align-items: center;
+      }
+      .legend {
+        color: #000;
+        font-size: 24px;
+        text-align: center;
+        padding-top: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+  </style>
+</head>
+<body>
+
+<div class="addArticleForm">
+    <form action="/Managers/article/add/" method="POST" enctype="multipart/form-data">
+            <h3 class="legend">增加文章</h3>
+            <div class="input">
+                <input type="text" placeholder="标题" name="title" required/>
+            </div>
+            <div class="input">
+                <input type="text"  placeholder="作者" name="authors" required />
+                <small style="color:grey; font-size:10px;">有多个作者请用空格隔开</small>
+            </div>
+            <div class="input">
+                <input type="text"  placeholder="推送网址" name="articleURL" required />
+            </div>
+            <div class="input">
+                <h4>{{ add_article_info }}</h4>
+            </div>
+            <button type="submit" class="btn submit">增加</button>
+    </form>
+</div>
+
+</body>
+</html>
